@@ -65,9 +65,7 @@ void AI::NormalAI()
 			srand(time(NULL)-randoff);
 			randoff++;
 			
-			//random values will always be in middle 50% of board
-			//(this makes it harder to beat small boards)
-			lastX = rand() % ( board->getWidth() / 2 ) + board->getWidth() / 4;
+			lastX = rand() % ( board->getWidth() );
 
 		} while(
 				(lastY=board->drop(lastX, board->p2)) == -1 && //repeat if placing fails

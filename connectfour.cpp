@@ -61,7 +61,7 @@ int main()
 
 	cout << "Board created\n";
 
-	int colToDrop; //column user wants to drop into
+	int colToDrop=0; //column user wants to drop into
 	bool cont=true; //continue
 
 	AI myAI(&board); //create an AI 
@@ -76,8 +76,12 @@ int main()
 		//user's turn
 		board.print(); //print the board
 
+		do {
 		cout << "What column would you like to drop your piece into?\n> ";
 		cin >> colToDrop;
+		}
+		while(colToDrop < 1 || colToDrop > width);
+		
 		//prompt for and store desired column
 
 		//we like to start at 0, not 1.
